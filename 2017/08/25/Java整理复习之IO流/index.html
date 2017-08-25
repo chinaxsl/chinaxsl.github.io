@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="Life is brief, and then you die">
-<meta property="og:type" content="website">
+<meta name="description" content="Java整理复习之IO流标签（空格分隔）： Java IO  ##Java IO流原理在Java程序中,对于数据的输入和输出操作以“流”(stream)方式进行;J2SDK提供了各种各样的“流”类,用以获取不同种类的数据;程序中通过标准方法输入或输出数据|  类型     | 字节流   |  字符流  || :—–: | :—-:  | :—-:  || 输入流    |   InputStre">
+<meta property="og:type" content="article">
 <meta property="og:title" content="熊诗龙的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/08/25/Java整理复习之IO流/index.html">
 <meta property="og:site_name" content="熊诗龙的个人博客">
-<meta property="og:description" content="Life is brief, and then you die">
+<meta property="og:description" content="Java整理复习之IO流标签（空格分隔）： Java IO  ##Java IO流原理在Java程序中,对于数据的输入和输出操作以“流”(stream)方式进行;J2SDK提供了各种各样的“流”类,用以获取不同种类的数据;程序中通过标准方法输入或输出数据|  类型     | 字节流   |  字符流  || :—–: | :—-:  | :—-:  || 输入流    |   InputStre">
+<meta property="og:updated_time" content="2017-08-25T14:19:26.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="熊诗龙的个人博客">
-<meta name="twitter:description" content="Life is brief, and then you die">
+<meta name="twitter:description" content="Java整理复习之IO流标签（空格分隔）： Java IO  ##Java IO流原理在Java程序中,对于数据的输入和输出操作以“流”(stream)方式进行;J2SDK提供了各种各样的“流”类,用以获取不同种类的数据;程序中通过标准方法输入或输出数据|  类型     | 字节流   |  字符流  || :—–: | :—-:  | :—-:  || 输入流    |   InputStre">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/25/Java整理复习之IO流/"/>
 
 
 
 
 
-  <title> 熊诗龙的个人博客 </title>
+  <title>  | 熊诗龙的个人博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -282,9 +281,6 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/25/Java整理复习之IO流/" itemprop="url">
-                  未命名
-                </a>
               
             
           </h1>
@@ -335,9 +331,7 @@
       
 
       
-        
-          
-            <h1 id="Java整理复习之IO流"><a href="#Java整理复习之IO流" class="headerlink" title="Java整理复习之IO流"></a>Java整理复习之IO流</h1><p>标签（空格分隔）： Java IO</p>
+        <h1 id="Java整理复习之IO流"><a href="#Java整理复习之IO流" class="headerlink" title="Java整理复习之IO流"></a>Java整理复习之IO流</h1><p>标签（空格分隔）： Java IO</p>
 <hr>
 <p>##Java IO流原理<br>在Java程序中,对于数据的输入和输出操作以“流”(stream)方式进行;J2SDK提供了各种各样的“流”类,用以获取不同种类的数据;程序中通过标准方法输入或输出数据<br>|  类型     | 字节流   |  字符流  |<br>| :—–: | :—-:  | :—-:  |<br>| 输入流    |   InputStream  |   Reader     |<br>| 输出流    |   OutputStream   |   Writer   |</p>
 <p>###InputStream<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">int a = 0;</div><div class="line">FileInputStream inputStream = null;</div><div class="line">try &#123;</div><div class="line">    inputStream = new FileInputStream(&quot;G:\\old\\test\\src\\IO\\TestFileReader.java&quot;);</div><div class="line">&#125; catch (FileNotFoundException e) &#123;</div><div class="line">    System.out.println(&quot;找不到指定文件&quot;);</div><div class="line">    System.exit(-1);</div><div class="line">&#125;</div><div class="line">try &#123;</div><div class="line">    long num = 0;</div><div class="line">    while ((a = inputStream.read())!= -1) &#123;</div><div class="line">    System.out.print((char) a);</div><div class="line">    num++;</div><div class="line">    &#125;</div><div class="line">    inputStream.close();</div><div class="line">    System.out.println(&quot;共读取了&quot; + num +&quot;个字节&quot;);</div><div class="line">&#125; catch (IOException e) &#123;</div><div class="line">    System.out.println(&quot;文件读取错误&quot;);</div><div class="line">    System.exit(-1);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -345,20 +339,27 @@
 <p>###Reader<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">FileReader fileReader = null;</div><div class="line">int a = 0;</div><div class="line">try &#123;</div><div class="line">    int l = 0;</div><div class="line">fileReader = new FileReader(&quot;D:\\data.txt&quot;);</div><div class="line"> //   fileReader = new FileReader(&quot;G:\\old\\test\\src\\IO\\TestFileReader.java&quot;);</div><div class="line">while ((a = fileReader.read())!= -1) &#123;</div><div class="line">        l++;</div><div class="line">        System.out.print(a);</div><div class="line">&#125;</div><div class="line">fileReader.close();</div><div class="line">&#125; catch (FileNotFoundException e) &#123;</div><div class="line">    System.out.println(&quot;找不到指定文件&quot;);</div><div class="line">    System.exit(-1);</div><div class="line">&#125; catch (IOException e) &#123;</div><div class="line">    System.out.println(&quot;文件读取错误&quot;);</div><div class="line">    System.exit(-1);</div></pre></td></tr></table></figure></p>
 <p>##总结<br>字节流与字符流不同在于前者按字节读写，而后者按字符读写，例如分别用FileInPutStream和FileReader对java文件和txt文本文件读取，然后打印输出到控制台，结果发现英文和阿拉伯数字都可以正常显示，而对于中文，只有FileReader读取java文件输出结果能正常显示，其余均为乱码。<br>乱码原因有两种：<br>第一种是中文字符在Java里使用UTF-16对其进行编码转换为二进制进行存储，即每个中文字符需要占据两个字节的存储空间，而字节流读取时每次只能读取某个字符的其中一个字节。<br>第二种是编码格式的问题，在用FileReader对txt文件进行读取时，输出中文仍显示为乱码，这是因为在Windows操作系统下，txt文件默认的编码格式是ANSI，java文件默认编码是UTF-8，而Java中字符的默认编码格式是UTF-16，因此java文件的中文字符可正常显示，txt文件中文则为乱码。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -366,150 +367,38 @@
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="coderxsl">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="熊诗龙的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/05/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/07/05/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T00:55:28+08:00">
-                2017-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -517,6 +406,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -536,8 +429,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -581,6 +483,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java整理复习之IO流"><span class="nav-number">1.</span> <span class="nav-text">Java整理复习之IO流</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -695,6 +613,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
